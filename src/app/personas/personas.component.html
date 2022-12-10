@@ -1,0 +1,13 @@
+<div style="text-align: center;">
+  <button style="cursor: pointer;" (click)="agregar()">+</button>
+</div>
+
+<div class="box">
+  <!-- TRANSFERIR DATA DE UN COMPONENTE PADRE A HIJO "INPUT"-->
+  <app-persona *ngFor="let personaElement of personas; let i = index" [persona]="personaElement" [indice]="i">
+
+  </app-persona>
+</div>
+
+<!-- Mostrara los elementos de agregar, modificar y eliminar una persona -->
+<router-outlet></router-outlet>

@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Aplicación de Calculadora</h1>
+  <label>Operando A</label>
+  <input type="number" class="form-control" [(ngModel)]="val1">
+  <label>Operando B</label>
+  <input type="number" class="form-control" [(ngModel)]="val2">
+  <button (click)="sumar()" class="btn btn-primary mt-2">Sumar</button>
+  <p>Resultado: {{resultado}}</p>
+</div>

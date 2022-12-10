@@ -1,0 +1,36 @@
+<div class="container">
+  <h1 class="text-center mt-5">Listado de Productos</h1>
+  <button [disabled]='deshabilitar' (click)="agregarProducto()" class="btn btn-primary">Agregar Producto</button>
+  <ng-template [ngIf]="mostrar" [ngIfElse]="sinProducto">
+    <p>{{mensaje}}</p>
+  </ng-template>
+  <ng-template #sinProducto>
+    <p>No se ha agregado ningun producto</p>
+  </ng-template>
+  <div class="row text-center mt-4">
+    <div class="col bg-primary">
+      <app-productos></app-productos>
+
+      <label>Titulo Producto</label>
+      <input type="text" class="form-control" (input)="modificarTitulo($event)">
+      {{titulo}}
+    </div>
+    <div class="col bg-secondary">
+      <app-productos></app-productos>
+
+      <label>Titulo Producto v2</label>
+      <input type="text" class="form-control" [(ngModel)]='titulo'>
+      {{titulo}}
+    </div>
+    <div class="col bg-info">
+      <label>DONT PRESS THE BUTTON !</label><br />
+      <button (click)="explotar()" class="btn btn-primary mt-2">A button</button>
+      <ng-template [ngIf]="presion>3" [ngIfElse]="caso">
+        <h3>{{exploMsg}}</h3>
+      </ng-template>
+      <ng-template #caso>
+        <p>{{exploMsg}}</p>
+      </ng-template>
+    </div>
+  </div>
+</div>

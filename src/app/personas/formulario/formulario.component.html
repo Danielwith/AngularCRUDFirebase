@@ -1,0 +1,16 @@
+<div class="box">
+  <form class="item" (ngSubmit)="f.form.valid && agregarPersona()" #f="ngForm">
+
+    <input type="text" name="nombre" id="nombre" placeholder="Nombre" [(ngModel)]="nombreInput" required>
+    <!-- Local Reference -->
+    <!-- #apellidoRef -->
+    <input type="text" name="apellido" id="apellido" placeholder="Apellido" class="form-control"
+      [(ngModel)]="apellidoInput" required="">
+
+    <button type="submit" style="cursor: pointer;">+</button>
+    <!-- Local Reference -->
+    <!-- <button type="submit" class="btn btn-primary mt-2" (click)="agregarPersona(nombreRef,apellidoRef)">Agregar</button> -->
+    <button *ngIf="index!=null" type="submit" style="cursor: pointer;" class="buttonRed"
+      (click)="eliminarPersona()">-</button>
+  </form>
+</div>
